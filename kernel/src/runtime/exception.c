@@ -25,7 +25,7 @@ __attribute__((weak)) struct minemu_trap_frame *minemu_svc_dispatch(
     minemu_fail_stop();
 }
 
-struct minemu_trap_frame *minemu_irq_dispatch(
+__attribute__((weak)) struct minemu_trap_frame *minemu_irq_dispatch(
     struct minemu_trap_frame *frame) {
 
     if (frame->exception_id == (int32_t)MINEMU_IRQ_UART0) {
